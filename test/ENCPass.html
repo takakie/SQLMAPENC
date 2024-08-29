@@ -1,0 +1,23 @@
+//加密
+<html>
+<body>
+  <script src="http://25.75.2.2:20080/display/views/common/common.js"></script>
+  <script src="http://25.75.2.2:20080/display/views/encryptjs/js/SM.js"></script>
+  <script src="http://25.75.2.2:20080/display/views/encryptjs/js/smtransfer.js"></script>
+  <!-- <script src="http://25.75.2.2:20080/display/views/bootTable/extensions/dragtable/jquery-ui-1.11.4.js"></script>
+  <script src="http://25.75.2.2:20080/display/views/js/jquery/jquery-2.1.1.js"></script> -->
+  <div id="data-container"></div>
+  <script>
+    DEFAULT_SM2_PUB_KEY = "04b35255a93cf72020d7686f6d955e4c51f8bb824b48631732f724aca4d87e481ff5b38175135ec9265392e3f93bdd4b05a1b92ca6d275c60bc7f9f1d82f9f3d70";
+    //DEFAULT_SM2_PUB_KEY = "";
+    let jsonData = '{"hszbbm":"1009","cwzz":"","zh":""}';
+    let ciper= createSm2Data(jsonData);
+    let postStr = '{"hszbbm":"1009","cwzz":"","zh":""}"'
+    let enc_str=createSm2Data(postStr);
+    let plain = SG_sm4decrypt('448041ae214fa125d6e6706ddca1599bdb40cc90783ad6206f617bbce3198ceae7709d53d0337408de64c767e5310444', 'a2de69089fd464813dd9d4523836bd14')
+    document.getElementById("data-container").textContent = `ENC_GET_PARAM_FLG: ${ciper}\nENC_PARAM_FLG: ${enc_str}\n plain:${plain}`;
+    
+  </script>
+</body>
+</html>
+

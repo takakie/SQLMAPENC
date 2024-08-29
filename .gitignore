@@ -4,5 +4,4 @@ __pycache__/
 .sqlmap_history
 traffic.txt
 *~
-req*.txt
 .idea/
